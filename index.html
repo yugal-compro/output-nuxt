@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html >
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style id="vuetify-theme-stylesheet">:root {
+      --v-theme-background: 255,255,255;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 98,0,238;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 55,0,179;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 3,218,198;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 176,0,32;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 0,0,0;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 33, 37, 41;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+    }
+    .v-theme--light {
+      color-scheme: normal;
+      --v-theme-background: 255,255,255;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 98,0,238;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 55,0,179;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 3,218,198;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 176,0,32;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 0,0,0;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 33, 37, 41;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+    }
+    .v-theme--dark {
+      color-scheme: dark;
+      --v-theme-background: 18,18,18;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 33,33,33;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-variant: 189,189,189;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 66,66,66;
+      --v-theme-primary: 187,134,252;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 55,0,179;
+      --v-theme-primary-darken-1-overlay-multiplier: 1;
+      --v-theme-secondary: 3,218,197;
+      --v-theme-secondary-overlay-multiplier: 2;
+      --v-theme-secondary-darken-1: 3,218,197;
+      --v-theme-secondary-darken-1-overlay-multiplier: 2;
+      --v-theme-error: 207,102,121;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 2;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 2;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 2;
+      --v-theme-on-background: 255,255,255;
+      --v-theme-on-surface: 255,255,255;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 0,0,0;
+      --v-theme-on-secondary-darken-1: 0,0,0;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 255, 255, 255;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 1;
+      --v-medium-emphasis-opacity: 0.7;
+      --v-disabled-opacity: 0.5;
+      --v-idle-opacity: 0.1;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.16;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 33, 37, 41;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 52, 52, 52;
+      --v-theme-on-code: 204, 204, 204;
+    }
+    .bg-background {
+      --v-theme-overlay-multiplier: var(--v-theme-background-overlay-multiplier);
+      background-color: rgb(var(--v-theme-background)) !important;
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .bg-surface {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface)) !important;
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .bg-surface-variant {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-variant-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-variant)) !important;
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .bg-primary {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary)) !important;
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .bg-primary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .bg-secondary {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary)) !important;
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .bg-secondary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .bg-error {
+      --v-theme-overlay-multiplier: var(--v-theme-error-overlay-multiplier);
+      background-color: rgb(var(--v-theme-error)) !important;
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .bg-info {
+      --v-theme-overlay-multiplier: var(--v-theme-info-overlay-multiplier);
+      background-color: rgb(var(--v-theme-info)) !important;
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .bg-success {
+      --v-theme-overlay-multiplier: var(--v-theme-success-overlay-multiplier);
+      background-color: rgb(var(--v-theme-success)) !important;
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .bg-warning {
+      --v-theme-overlay-multiplier: var(--v-theme-warning-overlay-multiplier);
+      background-color: rgb(var(--v-theme-warning)) !important;
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+    .text-background {
+      color: rgb(var(--v-theme-background)) !important;
+    }
+    .border-background {
+      --v-border-color: var(--v-theme-background);
+    }
+    .text-surface {
+      color: rgb(var(--v-theme-surface)) !important;
+    }
+    .border-surface {
+      --v-border-color: var(--v-theme-surface);
+    }
+    .text-surface-variant {
+      color: rgb(var(--v-theme-surface-variant)) !important;
+    }
+    .border-surface-variant {
+      --v-border-color: var(--v-theme-surface-variant);
+    }
+    .on-surface-variant {
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .text-primary {
+      color: rgb(var(--v-theme-primary)) !important;
+    }
+    .border-primary {
+      --v-border-color: var(--v-theme-primary);
+    }
+    .text-primary-darken-1 {
+      color: rgb(var(--v-theme-primary-darken-1)) !important;
+    }
+    .border-primary-darken-1 {
+      --v-border-color: var(--v-theme-primary-darken-1);
+    }
+    .text-secondary {
+      color: rgb(var(--v-theme-secondary)) !important;
+    }
+    .border-secondary {
+      --v-border-color: var(--v-theme-secondary);
+    }
+    .text-secondary-darken-1 {
+      color: rgb(var(--v-theme-secondary-darken-1)) !important;
+    }
+    .border-secondary-darken-1 {
+      --v-border-color: var(--v-theme-secondary-darken-1);
+    }
+    .text-error {
+      color: rgb(var(--v-theme-error)) !important;
+    }
+    .border-error {
+      --v-border-color: var(--v-theme-error);
+    }
+    .text-info {
+      color: rgb(var(--v-theme-info)) !important;
+    }
+    .border-info {
+      --v-border-color: var(--v-theme-info);
+    }
+    .text-success {
+      color: rgb(var(--v-theme-success)) !important;
+    }
+    .border-success {
+      --v-border-color: var(--v-theme-success);
+    }
+    .text-warning {
+      color: rgb(var(--v-theme-warning)) !important;
+    }
+    .border-warning {
+      --v-border-color: var(--v-theme-warning);
+    }
+    .on-background {
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .on-surface {
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .on-primary {
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .on-primary-darken-1 {
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .on-secondary {
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .on-secondary-darken-1 {
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .on-error {
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .on-info {
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .on-success {
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .on-warning {
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+</style><link rel="preload" as="fetch" crossorigin="anonymous" href="/_payload.json"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/entry.b6a2886e.js"><link rel="preload" as="style" href="/_nuxt/entry.4a2d47fe.css"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/default.9498855b.js"><link rel="preload" as="style" href="/_nuxt/default.6772c883.css"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/nuxt-link.126012cc.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/page.f5580e52.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/index.f8255cc3.js"><link rel="prefetch" as="style" href="/_nuxt/custom.1d31fa2c.css"><link rel="prefetch" as="script" crossorigin href="/_nuxt/custom.ccfbe88c.js"><link rel="prefetch" as="script" crossorigin href="/_nuxt/smcat.template.aa880c46.js"><link rel="prefetch" as="script" crossorigin href="/_nuxt/dot.template.4fc89b1d.js"><link rel="prefetch" as="script" crossorigin href="/_nuxt/dot.states.template.37bedfad.js"><link rel="prefetch" as="script" crossorigin href="/_nuxt/scxml.template.7e505ef5.js"><link rel="prefetch" as="script" crossorigin href="/_nuxt/scxml.states.template.fd5074ec.js"><link rel="prefetch" as="script" crossorigin href="/_nuxt/error-component.c3570b15.js"><link rel="stylesheet" href="/_nuxt/entry.4a2d47fe.css"><link rel="stylesheet" href="/_nuxt/default.6772c883.css"><style>body{font-family:sans-serif}body button{background-color:#2a91f6;border:2px solid #000;border-radius:4px;color:#000;margin:5px}body button:hover{background-color:#fff;cursor:pointer}</style><style>.header-container[data-v-16161a06]{background-color:#293462;padding:16px;text-align:center}.header-container h1[data-v-16161a06]{color:#fff}.header-container .icon[data-v-16161a06]{margin-right:8px}</style><style>.my-container[data-v-3954d6a5]{margin:16px;padding:16px}.my-container .courses-list[data-v-3954d6a5]{margin-top:12px}.my-container .courses-list .courses-list-col[data-v-3954d6a5]{flex-wrap:wrap}.my-container .courses-list .courses-card[data-v-3954d6a5]{border:2px solid #293462;border-radius:5px;color:#293462;text-align:left}.my-container .courses-list .courses-card .courses-title[data-v-3954d6a5]{font-size:22px;margin-right:16px}.my-container .courses-list .courses-card .courses-text[data-v-3954d6a5]{font-weight:600}.my-container .courses-header[data-v-3954d6a5]{color:#293462}.my-container h2[data-v-3954d6a5]{color:#293462;font-size:60px}.my-container .courses-container-2[data-v-3954d6a5]{display:flex;flex-wrap:wrap}.my-container .courses-container-2 .my-card[data-v-3954d6a5]{margin:10px;width:300px}.my-container .courses-container[data-v-3954d6a5]{display:flex;flex-wrap:wrap;justify-content:center}.my-container .courses-container div[data-v-3954d6a5]{background-color:#293462;border-radius:8px;box-shadow:0 4px 8px 0 rgba(0,0,0,.2);cursor:pointer;margin:10px;padding:16px;text-align:center;transition:.3s;width:300px}.my-container .courses-container div[data-v-3954d6a5]:hover{box-shadow:0 12px 24px 0 rgba(0,0,0,.7)}.my-container .courses-container div h3[data-v-3954d6a5]{color:#fff}.my-container .courses-container div h4[data-v-3954d6a5],.my-container .courses-container div h5[data-v-3954d6a5]{color:#fff;font-family:Arial,Helvetica,sans-serif;font-weight:700}</style><style>.title-box[data-v-38fbbadf]{padding:8px 5px}.title-box .filter-title[data-v-38fbbadf]{color:#293462}</style></head>
+<body ><div id="__nuxt"><div><div class="v-container v-container--fluid v-locale--is-ltr header-container d-flex justify-space-between align-center" style="" data-v-16161a06><h1 data-v-16161a06>Courses App</h1><div data-v-16161a06><!----></div></div><div class="my-container" data-v-3954d6a5><div data-v-3954d6a5><h1>This is component of state diagram</h1><div id="svg"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 8.0.5 (0)
+ -->
+<!-- Title: state transitions Pages: 1 -->
+<svg width="71pt" height="212pt"
+ viewBox="0.00 0.00 71.36 212.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 208)">
+<title>state transitions</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-208 67.36,-208 67.36,4 -4,4"/>
+<!-- initial -->
+<g id="node1" class="node state initial">
+<title>initial</title>
+<ellipse fill="black" stroke="black" stroke-width="2" cx="31.68" cy="-198.6" rx="5.4" ry="5.4"/>
+</g>
+<!-- backlog -->
+<g id="node2" class="node state regular">
+<title>backlog</title>
+<polygon fill="#ffffff" fill-opacity="0.003922" stroke="none" stroke-width="2" points="63.36,-165.2 0,-165.2 0,-128.8 63.36,-128.8 63.36,-165.2"/>
+<text text-anchor="start" x="11" y="-143.4" font-family="Helvetica,sans-Serif" font-size="12.00">backlog</text>
+<path fill="none" stroke="black" stroke-width="2" d="M12.47,-129.8C12.47,-129.8 50.89,-129.8 50.89,-129.8 56.63,-129.8 62.36,-135.53 62.36,-141.27 62.36,-141.27 62.36,-152.73 62.36,-152.73 62.36,-158.47 56.63,-164.2 50.89,-164.2 50.89,-164.2 12.47,-164.2 12.47,-164.2 6.73,-164.2 1,-158.47 1,-152.73 1,-152.73 1,-141.27 1,-141.27 1,-135.53 6.73,-129.8 12.47,-129.8"/>
+</g>
+<!-- initial&#45;&gt;backlog -->
+<g id="edge1" class="edge transition">
+<title>initial&#45;&gt;backlog</title>
+<path fill="none" stroke="black" d="M31.68,-192.29C31.68,-188.13 31.68,-181.99 31.68,-175.59"/>
+<polygon fill="black" stroke="black" points="35.18,-175.9 31.68,-165.9 28.18,-175.9 35.18,-175.9"/>
+<text text-anchor="middle" x="33.07" y="-176.2" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+</g>
+<!-- doing -->
+<g id="node3" class="node state regular">
+<title>doing</title>
+<polygon fill="#ffffff" fill-opacity="0.003922" stroke="none" stroke-width="2" points="59.68,-100.8 3.68,-100.8 3.68,-64.4 59.68,-64.4 59.68,-100.8"/>
+<text text-anchor="start" x="17" y="-79" font-family="Helvetica,sans-Serif" font-size="12.00">doing</text>
+<path fill="none" stroke="black" stroke-width="2" d="M16.15,-65.4C16.15,-65.4 47.21,-65.4 47.21,-65.4 52.95,-65.4 58.68,-71.13 58.68,-76.87 58.68,-76.87 58.68,-88.33 58.68,-88.33 58.68,-94.07 52.95,-99.8 47.21,-99.8 47.21,-99.8 16.15,-99.8 16.15,-99.8 10.41,-99.8 4.68,-94.07 4.68,-88.33 4.68,-88.33 4.68,-76.87 4.68,-76.87 4.68,-71.13 10.41,-65.4 16.15,-65.4"/>
+</g>
+<!-- backlog&#45;&gt;doing -->
+<g id="edge2" class="edge transition">
+<title>backlog&#45;&gt;doing</title>
+<path fill="none" stroke="black" d="M31.68,-128.95C31.68,-123.58 31.68,-117.51 31.68,-111.59"/>
+<polygon fill="black" stroke="black" points="35.18,-111.63 31.68,-101.63 28.18,-111.63 35.18,-111.63"/>
+<text text-anchor="middle" x="33.07" y="-111.8" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+</g>
+<!-- test -->
+<g id="node4" class="node state regular">
+<title>test</title>
+<polygon fill="#ffffff" fill-opacity="0.003922" stroke="none" stroke-width="2" points="59.68,-36.4 3.68,-36.4 3.68,0 59.68,0 59.68,-36.4"/>
+<text text-anchor="start" x="22.01" y="-14.6" font-family="Helvetica,sans-Serif" font-size="12.00">test</text>
+<path fill="none" stroke="black" stroke-width="2" d="M16.15,-1C16.15,-1 47.21,-1 47.21,-1 52.95,-1 58.68,-6.73 58.68,-12.47 58.68,-12.47 58.68,-23.93 58.68,-23.93 58.68,-29.67 52.95,-35.4 47.21,-35.4 47.21,-35.4 16.15,-35.4 16.15,-35.4 10.41,-35.4 4.68,-29.67 4.68,-23.93 4.68,-23.93 4.68,-12.47 4.68,-12.47 4.68,-6.73 10.41,-1 16.15,-1"/>
+</g>
+<!-- doing&#45;&gt;test -->
+<g id="edge3" class="edge transition">
+<title>doing&#45;&gt;test</title>
+<path fill="none" stroke="black" d="M31.68,-64.55C31.68,-59.18 31.68,-53.11 31.68,-47.19"/>
+<polygon fill="black" stroke="black" points="35.18,-47.23 31.68,-37.23 28.18,-47.23 35.18,-47.23"/>
+<text text-anchor="middle" x="33.07" y="-47.4" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+</g>
+</g>
+</svg>
+</div><button type="button" class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated" style=""><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->click me<!--]--><!--]--></span><!----><!----></button></div><div class="d-sm-flex justify-space-between align-center courses-header" data-v-3954d6a5><div data-v-3954d6a5><h1 class="text-center" data-v-3954d6a5>0 Courses</h1></div><div class="d-flex align-center justify-center" data-v-3954d6a5><button type="button" class="v-btn v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-outlined mx-2" style="color:#293462;caret-color:#293462;" data-v-3954d6a5><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--><i class="mdi-plus-circle mdi v-icon notranslate v-theme--light v-icon--size-large" style="color:#293462;caret-color:#293462;" aria-hidden="true" data-v-3954d6a5></i>  Course<!--]--><!--]--></span><!----><!----></button><div data-v-3954d6a5><div class="v-row justify-center" style="" data-v-3954d6a5 data-v-38fbbadf><!--[--><!--[--><button type="button" class="v-btn v-theme--light v-btn--density-default v-btn--size-small v-btn--variant-outlined mx-2" style="color:#293462;caret-color:#293462;" aria-haspopup="dialog" aria-expanded="false" data-v-38fbbadf><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--><i class="mdi-filter mdi v-icon notranslate v-theme--light v-icon--size-large" style="color:#293462;caret-color:#293462;" aria-hidden="true" data-v-38fbbadf></i>Courses<!--]--><!--]--></span><!----><!----></button><!--]--><!----><!--]--></div></div></div></div><div class="v-row courses-list" style="" data-v-3954d6a5><!--[--><!--]--></div></div></div></div><script type="application/json" id="__NUXT_DATA__" data-ssr="true" data-src="/_payload.json">[{"state":1,"_errors":3,"serverRendered":5,"pinia":6,"prerenderedAt":11},["Reactive",2],{},["Reactive",4],{},true,["Reactive",7],{"main":8},{"courses":9,"course":10},[],null,1690541318371]</script><script>window.__NUXT__={};window.__NUXT__.config={public:{},app:{baseURL:"/",buildAssetsDir:"/_nuxt/",cdnURL:""}}</script><script type="module" src="/_nuxt/entry.b6a2886e.js" crossorigin></script></body>
+</html>
